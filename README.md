@@ -18,7 +18,7 @@
 
 I'm an ECE student at **North-Eastern Hill University** working at the intersection of embedded firmware, real-time sensing, and intelligent systems. My work spans bare-metal microcontroller programming to IoT pipelines — I care about systems that are reliable under real-world constraints, not just clean in simulation.
 
-Currently interning at **VECC (Variable Energy Cyclotron Centre)**, where I write safety-critical firmware for a medical cyclotron. I believe good embedded code is about what it does when things go wrong.
+Ex Intern at **VECC (Variable Energy Cyclotron Centre)**, where I wrote safety-critical firmware for a medical cyclotron. I believe good embedded code is about what it does when things go wrong.
 
 ---
 
@@ -36,7 +36,7 @@ Applied ML               →  Unsupervised learning, recommender systems, reinfo
 
 ## Experience
 
-**🔬 Engineering Intern — VECC (Medical Cyclotron)**  `Jan 2026 – Present`  
+**🔬 Engineering Intern — VECC (Medical Cyclotron)**  `Jan 2026 – Feb 2026`  
 Safety-critical PSoC firmware for stripper control. Multi-slave I2C, fault detection, watchdog recovery, physical-layer debugging.
 
 **⚙️ Embedded Systems Intern — Emertxe Information Technologies**  `Dec 2025 – Jan 2026`  
