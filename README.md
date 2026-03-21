@@ -80,17 +80,6 @@ A minimal, asynchronous Arduino wrapper around the native ESP-IDF `esp-mqtt` com
 - 🧵 Native ESP-IDF performance, zero overhead abstractions
 - ✅ Tested on ESP32 DevKit V1 and Seeed XIAO ESP32C3
 
----
-
-## GitHub Stats
-
-<div align="center">
-
-![Rohit's GitHub Stats](https://github-readme-stats.vercel.app/api?username=shawrhit&show_icons=true&theme=dark&hide_border=true&bg_color=0d1117&title_color=58a6ff&icon_color=58a6ff&text_color=c9d1d9)
-
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=shawrhit&layout=compact&theme=dark&hide_border=true&bg_color=0d1117&title_color=58a6ff&text_color=c9d1d9)
-
-</div>
 
 ---
 
