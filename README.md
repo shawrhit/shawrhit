@@ -66,6 +66,8 @@ IoT soil health monitoring system: NPK sensors + ESP32 + Raspberry Pi. Owned the
 ## Open Source
 
 ### 📦 ESP32 Azure MQTT Manager
+> Available in the **Arduino Library Manager** — search `ESP32_Azure_MQTT_Manager`
+
 [![GitHub](https://img.shields.io/badge/GitHub-ESP32_Azure_MQTT_Manager-181717?style=flat-square&logo=github)](https://github.com/shawrhit/ESP32_Azure_MQTT_Manager)
 [![Release](https://img.shields.io/github/v/release/shawrhit/ESP32_Azure_MQTT_Manager?style=flat-square&color=0089D6)](https://github.com/shawrhit/ESP32_Azure_MQTT_Manager/releases)
 
