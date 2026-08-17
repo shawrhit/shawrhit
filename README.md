@@ -2,7 +2,7 @@
 
 Firmware engineer. I write code that has to be right the first time, because by the time it fails, it's usually inside something you can't easily open back up.
 
-Currently at **Anedya Systems**, Ahmedabad: building the low-level stack for a Beken BK7258, which is a chip most of the internet hasn't written a single line of documentation for. That's been the job, lately: reading silence where a datasheet should be, and turning it into something that works.
+Currently at **anedya.io**, Ahmedabad: building the low-level stack for a Beken BK7258, which is a chip most of the internet hasn't written a single line of documentation for. That's been the job, lately: reading silence where a datasheet should be, and turning it into something that works.
 
 [shawrhit@gmail.com](mailto:shawrhit@gmail.com) · [linkedin.com/in/shawrhit](https://linkedin.com/in/shawrhit) · [shaws.systems](https://shaws.systems)
 
