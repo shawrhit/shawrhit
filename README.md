@@ -1,101 +1,49 @@
-<div align="center">
-
 # Rohit Kumar Shaw
 
-**Embedded Systems · IoT · Edge Intelligence**
+Firmware engineer. I write code that has to be right the first time, because by the time it fails, it's usually inside something you can't easily open back up.
 
-*Building where hardware meets intelligence — firmware, sensors, and systems that talk to the real world.*
+Currently at **Anedya Systems**, Ahmedabad — building the low-level stack for a Beken BK7258, which is a chip most of the internet hasn't written a single line of documentation for. That's been the job, lately: reading silence where a datasheet should be, and turning it into something that works.
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-shawrhit-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://linkedin.com/in/shawrhit)
-[![Email](https://img.shields.io/badge/Email-shawrhit@gmail.com-EA4335?style=flat-square&logo=gmail&logoColor=white)](mailto:shawrhit@gmail.com)
-[![Location](https://img.shields.io/badge/Based_in-Kolkata,_India-1a1a2e?style=flat-square&logo=googlemaps&logoColor=white)](#)
-
-</div>
+[shawrhit@gmail.com](mailto:shawrhit@gmail.com) · [linkedin.com/in/shawrhit](https://linkedin.com/in/shawrhit) · [shaws.systems](https://shaws.systems)
 
 ---
 
-## About
+## What I've been building
 
-I'm an ECE student at **North-Eastern Hill University** working at the intersection of embedded firmware, real-time sensing, and intelligent systems. My work spans bare-metal microcontroller programming to IoT pipelines — I care about systems that are reliable under real-world constraints, not just clean in simulation.
+**A WebRTC port that, as far as I can tell, didn't exist before.**
+Ported `libpeer` onto the BK7258 — dual RISC-V, Armino/FreeRTOS, 8MB PSRAM, no prior art. Killed by pthread and mbedtls linker errors on the first attempt, alive again after finding the one flag (`MBEDTLS_SSL_DTLS_SRTP`) buried in the mbedtls config that nobody thought to mention. Now does 720p peer-to-peer and holds a stable connection over TURN relay, confirmed frame-by-frame in `webrtc-internals`. Small thing to describe, took a while to earn.
 
-Ex Intern at **VECC (Variable Energy Cyclotron Centre)**, where I wrote safety-critical firmware for a medical cyclotron. I believe good embedded code is about what it does when things go wrong.
+**A full connectivity SDK, underneath that.**
+MQTT, OTA, and a key-value Valuestore layer — the unglamorous plumbing every device needs before it can be trusted to update itself in the field without someone driving out to fix it by hand.
+
+**A bug that turned into an accounting lesson.**
+TURN traffic was over-reporting. Root cause: `iceTransportPolicy: 'relay'` quietly opens four ports per session, not one. The kind of thing that looks like a mystery until you count carefully.
+
+**A cyclotron doesn't get to fail gracefully.**
+Earlier, at VECC — the Department of Atomic Energy's cyclotron facility — I wrote PSoC firmware for stripper control: multi-slave I2C, fault detection, watchdog recovery. Safety-critical in the literal sense. Good training for caring about edge cases.
 
 ---
 
-## What I Work On
+## Longer-running things
 
-```text
-Firmware Architecture    →  Bare-metal C, ISR design, watchdog recovery, fault handling
-Microcontrollers         →  PSoC 5LP, PIC, ESP32, Raspberry Pi
-Interfaces               →  I2C (multi-slave), SPI, UART
-IoT Systems              →  Sensor integration, edge data pipelines, real-time processing
-Applied ML               →  Unsupervised learning, recommender systems, reinforcement learning
+**KryOS** — a fault-tolerant edge gateway for medical cold-chain monitoring, built as my undergraduate thesis. Buildroot Linux on a Raspberry Pi 4, ESP-MESH for quorum consensus between nodes, a custom kernel driver (`kryos_spi.ko`), and a protocol I called ASQC for keeping state honest when nodes disagree. Headed for an IEEE journal, supervised by Dr. Rupaban Subadar.
+
+**RESONANCE** — acoustic fingerprinting for detecting leaks in underground pipes, on a MAX32630FTHR. Submitted to the AIoT Design Challenge 2026. The idea: a pipe under stress sounds different before it fails, if you're listening correctly.
+
+**Two Arduino libraries, actually in the Library Manager** — `ESP32_Azure_MQTT_Manager` and `ESP32 AWS MQTT Manager`. Native MQTT-over-TLS, zero dependency on external clients, built because the existing options all made you choose between convenience and control. [GitHub →](https://github.com/shawrhit)
+
+---
+
+## Stack, roughly
+
+```
+RTOS & low-level    FreeRTOS, bare-metal C, ISR design, watchdog recovery
+Silicon              BK7258 (RISC-V), ESP32, PSoC 5LP, PIC, Raspberry Pi
+Wire protocols       MQTT, WebRTC/libpeer, TURN/STUN, Modbus, I2C, SPI, UART
+Systems              Buildroot Linux, custom kernel drivers, Docker toolchains
+Also                 Python, applied ML (unsupervised learning, RL)
 ```
 
 ---
 
-## Experience
-
-**🔬 Engineering Intern — VECC (Medical Cyclotron)** `Jan 2026 – Feb 2026`  
-Safety-critical PSoC firmware for stripper control. Multi-slave I2C, fault detection, watchdog recovery, physical-layer debugging.
-
-**⚙️ IoT & Embedded Systems Intern — Emertxe Information Technologies** `Dec 2025 – Present`  
-Full firmware systems on PIC microcontrollers — timer ISRs, LCD interfacing, keypad input, control logic.
-
-**🌱 Project Intern — Amantya Technologies / NEHU 5G Lab** `Jul – Sep 2025`  
-IoT soil health monitoring system: NPK sensors + ESP32 + Raspberry Pi. Owned the full stack — circuit design, firmware, and bring-up.
-
-**🚀 Emerging Tech Expert — GDG On Campus NEHU** `Sep 2025 – Present`
-
----
-
-## Tech Stack
-
-![C](https://img.shields.io/badge/C-00599C?style=flat-square&logo=c&logoColor=white)
-![Embedded C](https://img.shields.io/badge/Embedded_C-222222?style=flat-square&logo=c&logoColor=white)
-![C++](https://img.shields.io/badge/C++-00599C?style=flat-square&logo=cplusplus&logoColor=white)
-![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
-![ESP32](https://img.shields.io/badge/ESP32-E7352C?style=flat-square&logo=espressif&logoColor=white)
-![Raspberry Pi](https://img.shields.io/badge/Raspberry_Pi-A22846?style=flat-square&logo=raspberrypi&logoColor=white)
-![Linux](https://img.shields.io/badge/Linux-FCC624?style=flat-square&logo=linux&logoColor=black)
-![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white)
-![Azure](https://img.shields.io/badge/Azure-0089D6?style=flat-square&logo=microsoft-azure&logoColor=white)
-
----
-
-## Open Source
-
-### 📦 ESP32 Azure MQTT Manager
-> Available in the **Arduino Library Manager** — search `ESP32_Azure_MQTT_Manager`
-
-[![GitHub](https://img.shields.io/badge/GitHub-ESP32_Azure_MQTT_Manager-181717?style=flat-square&logo=github)](https://github.com/shawrhit/ESP32_Azure_MQTT_Manager)
-[![Release](https://img.shields.io/github/v/release/shawrhit/ESP32_Azure_MQTT_Manager?style=flat-square&color=0089D6)](https://github.com/shawrhit/ESP32_Azure_MQTT_Manager/releases)
-
-A native MQTT-over-TLS implementation for connecting ESP32 devices to **Azure IoT Hub**. Built from the ground up with zero dependencies on external MQTT clients.
-
-- 🔑 **Dynamic SAS Authentication:** Built-in HMAC-SHA256, Base64, and URL encoding right on the ESP32.
-- 📦 **Native Packet Handling:** Custom MQTT packet encode/decode path over `WiFiClientSecure`.
-- 🔄 **Cross-Cloud Compatibility:** Includes a drop-in alias to easily migrate projects from AWS to Azure.
-- ⚡ **Minimal API:** One-call setup for Wi-Fi, MQTT, and callbacks, without sacrificing low-level control.
-
-### 📦 ESP32 AWS MQTT Manager
-> Available in the **Arduino Library Manager** — search `ESP32 AWS MQTT Manager`
-
-[![Arduino Library](https://img.shields.io/badge/Arduino-Library_Manager-00979D?style=flat-square&logo=arduino&logoColor=white)](https://www.arduinolibraries.info/libraries/esp32-aws-mqtt-manager)
-[![GitHub](https://img.shields.io/badge/GitHub-ESP32_AWS_MQTT_Manager-181717?style=flat-square&logo=github)](https://github.com/shawrhit/ESP32_AWS_MQTT_Manager)
-[![Release](https://img.shields.io/github/v/release/shawrhit/ESP32_AWS_MQTT_Manager?style=flat-square&color=58a6ff)](https://github.com/shawrhit/ESP32_AWS_MQTT_Manager/releases)
-
-A minimal, asynchronous Arduino wrapper around the native ESP-IDF `esp-mqtt` component for connecting ESP32 boards to **AWS IoT Core** over mutual TLS.
-
-- 🔐 **True mTLS:** Pass certificates as strings directly — no SPIFFS mounting required.
-- ⚡ **Async Callbacks:** Non-blocking architecture with a built-in publish queue.
-- 🧵 **Native Performance:** Built on ESP-IDF with zero overhead abstractions.
-- ✅ **Hardware Tested:** Verified on ESP32 DevKit V1 and Seeed XIAO ESP32C3.
-
----
-
-<div align="center">
-
-*"The closer the code is to the hardware, the higher the stakes."*
-
-</div>
+*The closer the code sits to the hardware, the fewer places there are left to hide.*
